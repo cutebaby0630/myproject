@@ -35,6 +35,23 @@ public class VariableTester {
 			System.out.println(w.charAt(0));
 //			寫出W中的第一個字是什麼
 			
+			float f = 5.0f;
+			int x = 5;
+			int y = 3;
+			float z = x / y;
+			System.out.println(z);
+			
+			System.out.println(x >> 1);
+//			x往右移動1個bit
+			x++;
+//			等於x = x + 1;
+			x--;
+//			等於x = x - 1;
+			x += 2;
+//			等於x = x + 2;
+			System.out.println(x);
+			
+			
 	}
 
 }
