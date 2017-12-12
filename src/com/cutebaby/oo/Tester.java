@@ -3,7 +3,8 @@ package com.cutebaby.oo;
 public class Tester {
 
 	public static void main(String[] args) {
-		Students stu = new Students("王小明:",55,66,77);
+//		Students stu = new Students("王小明:",55,66,77);
+		Students stu = new Students("王小明");
 //		stu.chinese = 55;
 //		stu.english = 66;
 //		stu.math = 77;
