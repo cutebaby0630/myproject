@@ -42,7 +42,7 @@ public class GameTester {
 				break;
 			case 6:
 				if (pos % col != col - 1) {
-					pos = pos + col;
+					pos = pos + 1;
 					hp = hp - 5;
 					System.out.println(hp);
 				} else {
@@ -60,11 +60,9 @@ public class GameTester {
 					System.out.println(hp);
 				}
 				break;
-			
 
 			}
 
-			
 		}
 
 	}
