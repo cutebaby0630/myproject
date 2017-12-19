@@ -9,40 +9,38 @@ public class Drink {
 		
 		int m = 0;
 		
-		while (m >= 0) {
+		while (z!=0) {
 			System.out.println("販賣機餘額:" + " " + m + "元" );
 			System.out.println("請投幣或選擇飲料(a或b或c)，或輸入0結束:");
 			Scanner scanner = new Scanner(System.in);
 			String line = scanner.nextLine();
-			
-			char a=(int)'a';
-			char b=(int)'b';
-			char c=(int)'c';
-			z = Integer.parseInt(line);
-			
-			
-			switch (z) {
-			case 1:
+
+			switch (line) {
+			case "1":
 				m=m+1;
 				break;
-			case 5:
+			case "5":
 				m=m+5;
 				break;
-			case 97 :
-				m=m+15;
+			case "10" :
+				m=m+10;
 				break;
-			case 98 :
+			case "a" :
+				System.out.println("DON!" );
+				m=m-15;
+				break;
+			case "b" :
 				System.out.println("DON!" );
 				m=m-20;
 				break;
-			case 99 :
+			case "c" :
 				System.out.println("DON!" );
 				m=m-30;
 				break;
-				
-				
-			
-
+			case "0" :
+				System.out.println("結束!" );
+				 z =0;
+				break;
 			}
 
 		}
