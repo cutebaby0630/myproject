@@ -18,6 +18,7 @@ public class Students {
 		this.english = english;
 		this.chinese = chinese;
 		this.math = math;
+//		this→代表本類別的，不是區域變數的name
 	}
 
 	public Students() {
@@ -29,7 +30,7 @@ public class Students {
 		// this強調name為屬性變數，並不是區域變數
 	}
 
-	 public void print() {
+	public void print() {
 		// void 代表執行後不回傳
 		System.out.println(pass);
 		System.out.println(english + "\t" + chinese + "\t" + math + "\t");
@@ -45,5 +46,6 @@ public class Students {
 	public int getAverage() {
 		// 執行後回傳int
 		return (english + math + chinese) / 3;
+		// return→回傳變數
 	}
 }

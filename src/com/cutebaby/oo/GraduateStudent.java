@@ -9,11 +9,23 @@ public class GraduateStudent extends Students {
 	int thiese;
 
 	public GraduateStudent() {
-		
+//		super();
+//		super()是建構子
+		System.out.print("HI");
 	}
-	public void print(){
-		System.out.println(pass);
-		System.out.println(english + "\t" + chinese + "\t" + math + "\t");
 
+	@Override
+	// @Override→檢查複寫的東西，父列別有無
+	public void print() {
+		super.print();
+		System.out.println(pass);
+		System.out.println(english + "\t" + chinese + "\t" + math + "\t"  + thiese+ "\t");
 	}
+
+	@Override
+	public int getAverage() {
+		// 執行後回傳int
+		return (english + math + chinese) / 3;
+	}
+
 }
