@@ -17,8 +17,7 @@ public class Tester {
 	        for(int i = 1; i <= N; i++) { 
 	            int j = (int) (r.nextInt(10));
 
-	            if(j == 0)
-	                j = 1;
+	            
 
 	            int tmp = a[i]; 
 	            a[i] = a[j]; 
