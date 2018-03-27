@@ -4,7 +4,7 @@ public class PokerTester {
 
 	public static void main(String[] args) {
 		String flowers = "♠♥♦♣";
-		PokerShuffle a = new PokerShuffle();
+		Poker2 a = new Poker2();
 		a.shuffle();
 		a.print();
 	}

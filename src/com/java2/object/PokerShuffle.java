@@ -27,7 +27,10 @@ public class PokerShuffle {
 	public void print() {
 		for (int i=0;i<cards.length;i++) {
 			int a= cards[i];
-			System.out.println((a % 13) + 1 + "" + (flowers.charAt(a / 13)));
+			System.out.print((a % 13) + 1 + "" + (flowers.charAt(a / 13)));
+			if(i%13 == 0){
+			System.out.println(" ");	
+			}
 		}
 	}
 }
