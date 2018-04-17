@@ -1,5 +1,6 @@
 package com.java2.object;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -17,6 +18,15 @@ public class Sogo {
 			case 1:
 				intputSales();
 				break;
+			case 2:
+				try {
+					FileInputStream fie = new FileInputStream("sales.txt");
+					
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			case 3:
 				return;
 			}
