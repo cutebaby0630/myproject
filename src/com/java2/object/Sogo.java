@@ -32,48 +32,51 @@ public class Sogo {
 				intputSales();
 				break;
 			case 2:
-				ArrayList<Sales>list= new ArrayList<>();
-				try {
-					FileInputStream fie = new FileInputStream("sales.txt");
-					InputStreamReader isr = new InputStreamReader(fie);
-					BufferedReader in = new BufferedReader(isr);
-					String line = in.readLine();
-					while(line!=null) {
-						String[] token = line.split("\t");
-						try {
-							int type = Integer.parseInt(token[0]);
-							int amount = Integer.parseInt(token[1]);
-							Sales sales = new Sales(type,amount);
-							list.add(sales);
-						}catch(NumberFormatException e) {
-							System.out.println("資料格式錯誤");
-							return;
-						}
-						line = in.readLine();
-					}
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				
-//				印出報表
-				for(Sales sales:list) {
-					Customer customer = null;
-					switch(sales.type) {
-					case 1 :
-						customer = new Customer(sales.getAmount());
-						break;
-					case 2:
-						customer = new AgCustomer(sales.getAmount());
-						break;
-					case 3 :
-						customer = new AuCustomer(sales.getAmount());
-						break;
-					}
-					customer.print();
-				}
-				break;
+				ArrayList<Sales> list = new ArrayList<>();
+								try {
+									FileInputStream fis = new FileInputStream("sales.txt");
+									InputStreamReader isr = new InputStreamReader(fis);
+									BufferedReader in = new BufferedReader(isr);
+									String line = in.readLine();
+									while (line != null) {
+										String[] token = line.split("\t");
+										try {
+											int type = Integer.parseInt(token[0]);
+											int amount = Integer.parseInt(token[1]);
+											Sales sales = new Sales(type, amount);
+											list.add(sales);
+										} catch (NumberFormatException e) {
+											System.out.println("資料格式錯誤");
+											return;
+										}
+										line = in.readLine();
+									}
+								} catch (FileNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								// report
+								for (Sales sales: list){
+									Customer customer = null;
+									switch(sales.getType()){
+									case 1: 
+										customer = new Customer(sales.getAmount());
+										break;
+									case 2:
+										customer = new AgCustomer(sales.getAmount());
+										break;
+									case 3:
+										customer = new AuCustomer(sales.getAmount());
+										break;
+									}
+									customer.print();
+								}
+							
+								
+				 				break;	 				
 				
 			case 3:
 				return;
