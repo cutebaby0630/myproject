@@ -2,15 +2,15 @@ package com.java2.object;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileNotFoundException;	
+import java.io.FileOutputStream;	 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.nio.channels.ShutdownChannelGroupException;
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import java.util.List;
+import java.util.Scanner;	
+import java.nio.channels.ShutdownChannelGroupException;
 import com.cutebaby.aa.AgCustomer;
 import com.cutebaby.aa.AuCustomer;
 import com.cutebaby.aa.Customer;
@@ -86,7 +86,7 @@ public class Sogo {
 	
 	public void intputSales(){
 		try {
-			FileOutputStream fio = new FileOutputStream("sales", true);
+			FileOutputStream fio = new FileOutputStream("sales.txt", true);
 			PrintStream out =new PrintStream(fio);
 			System.out.println("請輸入會員等級:");
 			int type = a.nextInt();

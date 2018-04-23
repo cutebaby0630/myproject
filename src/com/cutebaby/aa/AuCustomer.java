@@ -14,8 +14,8 @@ public class AuCustomer extends Customer {
 	public void print() {
 		int returnMoney = (int) (amount * 0.1);
 		int total = (int) (amount * (1 - discount));
-		System.out.println(amount + "\t" + total );
-		System.out.println("Customer feedback :"+returnMoney);
+		System.out.print(amount + "\t" + total );
+		System.out.println(" "+"Customer feedback :"+returnMoney);
 	}
 
 }
