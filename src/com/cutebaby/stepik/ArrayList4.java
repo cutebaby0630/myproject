@@ -1,9 +1,10 @@
-package com.cutebaby.stepik;
+ package com.cutebaby.stepik;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Spliterator;
 
 
 
@@ -15,7 +16,7 @@ public class ArrayList4 {
 		List<Integer> nameList = new ArrayList  (scanner.nextInt());
 		
 		Object[] objArray = nameList.toArray();
-		String[] token = nameList.split(" ");
+		Spliterator<Integer> token = nameList.spliterator();
 		for (int i=0 ;i<objArray.length;i++){
 			if(i%2!=0){
 				break;
