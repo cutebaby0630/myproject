@@ -14,23 +14,23 @@ import java.util.TreeSet;
 public class Set3 {
 
 	public static void main(String[] args) {
-		HashSet<String> set = new HashSet<>();
-		List<String> list = new ArrayList<String>(new HashSet());
-		list.add("6");
-		list.add("postgres");
-		list.add("sqlite");
-		list.add("oracle");
-		list.add("mongodb");
-		list.add("postgres");
-		list.add("mssql");
+		Set<String> set = new TreeSet<>();
+		List<String> list = new ArrayList<String>(set);
+		set.add("6");
+		set.add("postgres");
+		set.add("sqlite");
+		set.add("oracle");
+		set.add("mongodb");
+		set.add("postgres");
+		set.add("mssql");
 		
-		list.remove("6");
+		set.remove("6");
 		
-		System.out.print(list);
+//		System.out.print(set);
 		
 		
-		for(int i=0 ;i<=list.size();i++){
-			System.out.println (list.get(i));
+		for(String  name : set){
+			System.out.println(name);
 		}
 	}
 
