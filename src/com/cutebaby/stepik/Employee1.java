@@ -1,41 +1,46 @@
 package com.cutebaby.stepik;
 
 public class Employee1 {
-
 	class Employee {
 		String name;
 		String email;
 		int experience;
+
 		public Employee(String name, String email, int experience) {
+			super();
 			this.name = name;
 			this.email = email;
 			this.experience = experience;
 		}
+
 		public String getName() {
 			return name;
 		}
+
 		public String getEmail() {
 			return email;
 		}
+
 		public int getExperience() {
 			return experience;
 		}
 	}
-	
-	class Developer extends Employee {
-		String mainlanguage;
+
+	 class Developer extends Employee {
+		String mainLanguage;
 		String[] skills;
-		public Developer(String name, String email, int experience, String mainlanguage, String[] skills) {
+		public Developer(String name, String email, int experience, String mainLanguage, String[] skills) {
 			super(name, email, experience);
-			this.mainlanguage = mainlanguage;
+			this.mainLanguage = mainLanguage;
 			this.skills = skills;
 		}
 		public String getMainLanguage() {
-			return mainlanguage;
+			return mainLanguage;
 		}
 		public String[] getSkills() {
 			return skills;
 		}
+		
 	}
 
 	class DataAnalyst extends Employee {
@@ -46,7 +51,7 @@ public class Employee1 {
 			this.phd = phd;
 			this.methods = methods;
 		}
-		public boolean isPhD() {
+		public boolean isPhd() {
 			return phd;
 		}
 		public String[] getMethods() {
@@ -56,9 +61,11 @@ public class Employee1 {
 
 	public static void main(String[] args) {
 		String[] skills = { "git", "Scala", "JBoss", "UML" };
-		Developer developer = new Developer ("Mary", "mary@mail.com", 3, "Java", skills);
+		Developer developer = new Developer("Mary", "mary@mail.com", 3, "Java", skills);
 
 		String[] mlMethods = { "neural networks", "decision tree", "bayesian algorithms" };
 		DataAnalyst analyst = new DataAnalyst("John", "john@gmail.com", 2, true, mlMethods);
 	}
+
+
 }

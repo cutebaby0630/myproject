@@ -1,28 +1,25 @@
- package com.cutebaby.stepik;
+package com.cutebaby.stepik;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Spliterator;
 
-
-
 public class ArrayList4 {
 	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		List<Integer> nameList = new ArrayList  (scanner.nextInt());
-		
-		Object[] objArray = nameList.toArray();
-		Spliterator<Integer> token = nameList.spliterator();
-		for (int i=0 ;i<objArray.length;i++){
-			if(i%2!=0){
-				break;
-			}else{
-				System.out.println(objArray[i]);
-			}
+		// List<Integer> a = new ArrayList<>();
+		// Scanner scanner = new Scanner(System.in);
+		String line = "1 2 3 4 5 6";
+		String[] token = line.split(" ");
+		for (int i = token.length; i >= 0; i--) {
+			
+				System.out.println(token[i]);
+			
 		}
-	  }
+		// System.out.println(line);
+
+	}
+
 }
