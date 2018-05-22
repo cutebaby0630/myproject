@@ -1,6 +1,7 @@
 package com.java2.threading;
 
 public class Horse extends Thread{
+//	因為無法重複繼承，所以繼承另外一個介面(多執行緒)
 	
 //	@Override
 	public void run(){
