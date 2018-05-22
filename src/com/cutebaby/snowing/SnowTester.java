@@ -3,7 +3,7 @@ package com.cutebaby.snowing;
 import java.util.ArrayList;
 import java.util.List;
 
-//題目:   設計Snow類別代表一顆雪x,y,Thread降落飄
+//題目:   設計Snow類別代表一顆雪x,y,Thread降落飄 
 
 
 public class SnowTester {
