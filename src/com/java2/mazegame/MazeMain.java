@@ -1,5 +1,14 @@
 package com.java2.mazegame;
-
+//有一遊戲場地，長寬由執行當時決定，場地中亂數產生
+//陷阱，陷阱數也由當時決定
+//
+//有一個玩家在這場地中，初始HP值為100，走一步消
+//耗1HP，撞到邊界扣5HP，掉到陷阱裡扣20HP
+//
+//有個當案(maze.txt)資訊如下:
+//	6,4
+//	5
+//	6,8,2,4,2,2,6,6,8,4,2,2,6
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

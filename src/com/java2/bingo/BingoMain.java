@@ -10,7 +10,7 @@ package com.java2.bingo;
 //		22 15 23 19 7
 //		2 20 18 3 14
 //		17 9 12 24 16
-//	判斷是是否有號碼用迴圈
+//	判斷是否有號碼用迴圈
 public class BingoMain {
 
 	public static void main(String[] args) {
