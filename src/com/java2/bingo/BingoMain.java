@@ -1,4 +1,9 @@
 package com.java2.bingo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 //讀取bingo.txt，資料如下:
 //	25
 //	8,4,7,18,21,3,5,1,9,10
@@ -14,8 +19,18 @@ package com.java2.bingo;
 public class BingoMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Random r = new Random();
+		List<Integer> num = new ArrayList<>();
+		for(int i=1; i<=25;i++) {
+			int n1 = r.nextInt(26);
+			num.add(n1);
+			if(i%5==0) {
+				System.out.println(n1);
+			}else {
+				System.out.print(n1 +"\t");
+			}
+		}
+		
 	}
 
 }
