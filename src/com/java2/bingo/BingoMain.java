@@ -32,5 +32,53 @@ public class BingoMain {
 		}
 		
 	}
+	
+
+	// boolean a;
+	// for(int i=1; i<=25;i++) {
+	// a=true;
+	// while(a){
+	// a=false;
+	// int n1 = r.nextInt(26);
+	// for(int j=0;j<num.size();j++){
+	// if(num(j)==n1){
+	// a=true;
+	// }
+	// }
+	//
+	// num.add(n1);
+	// if(i%5==0) {
+	// System.out.println(n1);
+	// }else {
+	// System.out.print(n1 +"\t");
+	// }
+	// }
+	// }
+	// Random random = new Random();
+	//
+	// int number = 0;
+	// ;
+	// int array[] = new int[6];
+	// boolean b;
+	//
+	// for (int i = 0; i < 6; i++) {
+	// b = true;
+	// while (b) {
+	//// b = false;
+	//// number = random.nextInt(6) + 1;
+	//// for (int j = 0; j < array.length; j++) {
+	//// if (array[j] == number) {
+	//// b = true;
+	//// }
+	//// }
+	//// }
+	//// array[i] = number;
+	//// System.out.printf("array[%d]=%d\n", i, number);
+	//// }
+	
+	private static int num(int i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }

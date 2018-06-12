@@ -33,6 +33,9 @@ public class MazeMain {
 			Maze m = new Maze(row, col, trapCount);
 			Random r = new Random();
 			Set<String> set = new TreeSet<>();
+			for(int i =0 ;i<=trapCount;i++){
+				
+			}
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
