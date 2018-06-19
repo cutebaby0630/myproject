@@ -20,19 +20,29 @@ public class BingoMain {
 
 	public static void main(String[] args) {
 		Random r = new Random();
-		List<Integer> num = new ArrayList<>();
-		for(int i=1; i<=25;i++) {
-			int n1 = r.nextInt(26);
-			num.add(n1);
-			if(i%5==0) {
-				System.out.println(n1);
-			}else {
-				System.out.print(n1 +"\t");
-			}
+		int list[] = new int[25+1];
+		
+		//		List<Integer> num = new ArrayList<>();
+		
+			
+			for(int i=1; i<=25;i++) {
+				list[i]=r.nextInt(26);
+				if(i%5==0) {
+					System.out.println(list[i]);
+				}else {
+					System.out.print(list[i] +"\t");
+				}
 		}
 		
+				
 	}
 	
+
+	private static void whlie(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	// boolean a;
 	// for(int i=1; i<=25;i++) {
