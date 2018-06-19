@@ -21,74 +21,28 @@ public class BingoMain {
 	public static void main(String[] args) {
 		Random r = new Random();
 		int list[] = new int[25+1];
-		
-		//		List<Integer> num = new ArrayList<>();
-		
-			
 			for(int i=1; i<=25;i++) {
-				list[i]=r.nextInt(26);
-				if(i%5==0) {
-					System.out.println(list[i]);
-				}else {
-					System.out.print(list[i] +"\t");
-				}
+				list[i]= i;			
 		}
-		
+			for (int i = 0; i < list.length; i++) {
+				int j =r.nextInt((25)+1);
+				// card[i]<->card[j]
+				int tmp = list[i];
+				list[i] = list[j];
+				list[j] = tmp;
+			}
+		for (int i =1; i <=list.length ; i++){
+			int y = list[i];
+			if(i%5==0) {
+				System.out.println(y);
+			}else {
+				System.out.print(y +"\t");
+			}
+
+		}
 				
 	}
 	
 
-	private static void whlie(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	// boolean a;
-	// for(int i=1; i<=25;i++) {
-	// a=true;
-	// while(a){
-	// a=false;
-	// int n1 = r.nextInt(26);
-	// for(int j=0;j<num.size();j++){
-	// if(num(j)==n1){
-	// a=true;
-	// }
-	// }
-	//
-	// num.add(n1);
-	// if(i%5==0) {
-	// System.out.println(n1);
-	// }else {
-	// System.out.print(n1 +"\t");
-	// }
-	// }
-	// }
-	// Random random = new Random();
-	//
-	// int number = 0;
-	// ;
-	// int array[] = new int[6];
-	// boolean b;
-	//
-	// for (int i = 0; i < 6; i++) {
-	// b = true;
-	// while (b) {
-	//// b = false;
-	//// number = random.nextInt(6) + 1;
-	//// for (int j = 0; j < array.length; j++) {
-	//// if (array[j] == number) {
-	//// b = true;
-	//// }
-	//// }
-	//// }
-	//// array[i] = number;
-	//// System.out.printf("array[%d]=%d\n", i, number);
-	//// }
 	
-	private static int num(int i) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }
