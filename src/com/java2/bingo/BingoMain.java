@@ -21,19 +21,22 @@ public class BingoMain {
 	public static void main(String[] args) {
 		Random r = new Random();
 		int list[] = new int[25+1];
-		
-		//		List<Integer> num = new ArrayList<>();
-		
-			
 			for(int i=1; i<=25;i++) {
-				list[i]=r.nextInt(26);
-				if(i%5==0) {
-					System.out.println(list[i]);
-				}else {
-					System.out.print(list[i] +"\t");
-				}
+				list[i]= i;
+				int j=r.nextInt((25)+1);
+				int tmp = list[i];
+				list[i] = list[j];
+				list[j] = tmp;			
 		}
-		
+		for (int i =0; i <=list.length ; i++){
+			int y = list[i];
+			if(i%5==0) {
+				System.out.println(y);
+			}else {
+				System.out.print(y +"\t");
+			}
+
+		}
 				
 	}
 	
