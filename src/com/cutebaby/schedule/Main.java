@@ -23,56 +23,13 @@ public class Main {
 	int hour;
 	int time;
 	List<Course> course = new ArrayList<>();
-	public Main() {
-		
+	
+	
+public Main() {
 		readCourse();
-	}
-	public class Course{
-		String name;
-		String id;
-		int weekDay;
-		int hour;
-		int time;
-		
-		public Course(String name, String id, int weekDay, int hour, int time) {
-			super();
-			this.name = name;
-			this.id = id;
-			this.weekDay = weekDay;
-			this.hour = hour;
-			this.time = time;
+		for(Course c :course) {
+			System.out.println(c.getName());
 		}
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public String getId() {
-			return id;
-		}
-		public void setId(String id) {
-			this.id = id;
-		}
-		public int getWeekDay() {
-			return weekDay;
-		}
-		public void setWeekDay(int weekDay) {
-			this.weekDay = weekDay;
-		}
-		public int getHour() {
-			return hour;
-		}
-		public void setHour(int hour) {
-			this.hour = hour;
-		}
-		public int getTime() {
-			return time;
-		}
-		public void setTime(int time) {
-			this.time = time;
-		}
-		
 	}
 	public void readCourse(){
 		FileReader fr;
