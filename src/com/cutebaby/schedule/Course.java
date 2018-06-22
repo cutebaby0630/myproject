@@ -15,6 +15,16 @@ public class Course{
 		this.hour = hour;
 		this.time = time;
 	}
+	public boolean isAvailable(int weekDay,int hour) {
+		boolean avail = true;
+		if(weekDay == this.weekDay) {
+			if(hour>=this.time&&hour<=this.time+hour) {
+				return false;
+				
+			}
+		}
+		return avail;
+	}
 	public String getName() {
 		return name;
 	}

@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 //有一文字檔儲存了課表資料(schedule.txt)
 //請讀取資料後，設計程式可檢查是否有空檔?
@@ -30,7 +31,20 @@ public Main() {
 		for(Course c :course) {
 			System.out.println(c.getName());
 		}
-	}
+		Scanner scanner =  new Scanner(System.in);
+		System.out.println("請輸入星期(1-7):");
+		int weekDay= scanner.nextInt();
+		System.out.println("請輸入時(0-24):");
+		int time= scanner.nextInt();
+		for(Course c :course) {
+			if(!c.isAvailable(weekDay, time)) {
+				System.out.println("[有課:"+c.getId()+" "+c.getName()+" 到"+c.getTime()+"時]");
+//				[有課:C004 English 到16時]
+			}else {
+				System.out.println("[有空檔]");
+			}
+		}
+}
 	public void readCourse(){
 		FileReader fr;
 		try {
@@ -46,6 +60,7 @@ public Main() {
 				int hour = Integer.parseInt(token[4]);
 				Course c = new Course(name, id, weekend, hour, time);
 				course.add(c);
+				line = bf.readLine();
 				
 
 				
