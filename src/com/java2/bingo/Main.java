@@ -1,5 +1,9 @@
 package com.java2.bingo;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,7 +21,26 @@ import java.util.Random;
 //		17 9 12 24 16
 //	判斷是否有號碼用迴圈
 public class Main {
-
+public Main() {
+	FileReader fr;
+	try {
+		fr = new FileReader("bingo.txt");
+		BufferedReader in = new BufferedReader(fr);
+		String line = in.readLine();
+		int number = Integer.parseInt(line);
+		int table =(int) Math.sqrt(number);
+		String token[] = line.split(",");
+		List<Integer> an = new ArrayList<>();
+		
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+}
 	public static void main(String[] args) {
 
 		Random r = new Random();
