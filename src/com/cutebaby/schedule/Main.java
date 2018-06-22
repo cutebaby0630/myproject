@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 //有一文字檔儲存了課表資料(schedule.txt)
 //請讀取資料後，設計程式可檢查是否有空檔?
@@ -18,13 +20,58 @@ public class Main {
 	String name;
 	String id;
 	int weekDay;
-	String hour;
+	int hour;
 	int time;
-	public static void main(String[] args) {
+	List<Course> course = new ArrayList<>();
+	public Main() {
+		
 		readCourse();
 	}
-	public void Course(int id,String name,int weekDay,String hour ,int time){
+	public class Course{
+		String name;
+		String id;
+		int weekDay;
+		int hour;
+		int time;
 		
+		public Course(String name, String id, int weekDay, int hour, int time) {
+			super();
+			this.name = name;
+			this.id = id;
+			this.weekDay = weekDay;
+			this.hour = hour;
+			this.time = time;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getId() {
+			return id;
+		}
+		public void setId(String id) {
+			this.id = id;
+		}
+		public int getWeekDay() {
+			return weekDay;
+		}
+		public void setWeekDay(int weekDay) {
+			this.weekDay = weekDay;
+		}
+		public int getHour() {
+			return hour;
+		}
+		public void setHour(int hour) {
+			this.hour = hour;
+		}
+		public int getTime() {
+			return time;
+		}
+		public void setTime(int time) {
+			this.time = time;
+		}
 		
 	}
 	public void readCourse(){
@@ -33,7 +80,20 @@ public class Main {
 			fr = new FileReader("schedule.txt");
 			BufferedReader bf = new BufferedReader(fr);
 			String line = bf.readLine();
-			String token[] = line.split(",");
+			while (line!=null) {
+				String token[] = line.split(",");
+				String id = token[0];
+				String name = token[1];
+				int weekend =Integer.parseInt(token[2]) ;
+				int time = Integer.parseInt(token[3]);
+				int hour = Integer.parseInt(token[4]);
+				Course c = new Course(name, id, weekend, hour, time);
+				course.add(c);
+				
+
+				
+			}
+			
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -45,5 +105,8 @@ public class Main {
 		
 		
 		
+	}
+	public static void main(String[] args) {
+		new Main();
 	}
 }
