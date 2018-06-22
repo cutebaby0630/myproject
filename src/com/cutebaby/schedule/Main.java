@@ -24,49 +24,54 @@ public class Main {
 	int hour;
 	int time;
 	List<Course> course = new ArrayList<>();
-	
-	
-public Main() {
+
+	public Main() {
 		readCourse();
-		for(Course c :course) {
+		for (Course c : course) {
 			System.out.println(c.getName());
 		}
-		Scanner scanner =  new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("請輸入星期(1-7):");
-		int weekDay= scanner.nextInt();
+		int weekDay = scanner.nextInt();
 		System.out.println("請輸入時(0-24):");
-		int time= scanner.nextInt();
-		for(Course c :course) {
-			if(!c.isAvailable(weekDay, time)) {
-				System.out.println("[有課:"+c.getId()+" "+c.getName()+" 到"+c.getTime()+"時]");
-//				[有課:C004 English 到16時]
-			}else {
-				System.out.println("[有空檔]");
-			}
+		int time = scanner.nextInt();
+		boolean avail = true;
+		for (Course c : course) {
+			if (!c.isAvailable(weekDay, time)) {
+				System.out.println("[有課:" + c.getId() + " " + c.getName() + " 到" + c.getTime() + "時]");
+				// [有課:C004 English 到16時]
+				avail = false;
+				break;
+	}
+//				else {
+//				System.out.println("[有空檔]");
+//			}
+			
 		}
-}
-	public void readCourse(){
+		if(avail) {
+			System.out.println("[有空檔]");
+		}
+	}
+
+	public void readCourse() {
 		FileReader fr;
 		try {
 			fr = new FileReader("schedule.txt");
 			BufferedReader bf = new BufferedReader(fr);
 			String line = bf.readLine();
-			while (line!=null) {
+			while (line != null) {
 				String token[] = line.split(",");
 				String id = token[0];
 				String name = token[1];
-				int weekend =Integer.parseInt(token[2]) ;
+				int weekend = Integer.parseInt(token[2]);
 				int time = Integer.parseInt(token[3]);
 				int hour = Integer.parseInt(token[4]);
 				Course c = new Course(name, id, weekend, hour, time);
 				course.add(c);
 				line = bf.readLine();
-				
 
-				
 			}
-			
-			
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,10 +79,9 @@ public Main() {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+
 	}
+
 	public static void main(String[] args) {
 		new Main();
 	}
