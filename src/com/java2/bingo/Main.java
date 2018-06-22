@@ -24,14 +24,21 @@ public class Main {
 public Main() {
 	FileReader fr;
 	try {
+//		bingi表格
 		fr = new FileReader("bingo.txt");
 		BufferedReader in = new BufferedReader(fr);
 		String line = in.readLine();
 		int number = Integer.parseInt(line);
 		int table =(int) Math.sqrt(number);
 		String token[] = line.split(",");
-		List<Integer> an = new ArrayList<>();
-		
+		List<Integer> ans = new ArrayList<>();
+		for(int i = 0 ;i<=token.length;i++) {
+			int an = Integer.parseInt(token[i]);
+			ans.add(an);
+		}
+		Table tb = new Table(table, number, ans);
+		tb.print();
+		tb.bingo();
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -40,6 +47,9 @@ public Main() {
 		e.printStackTrace();
 	}
 	
+	
+	
+			
 }
 	public static void main(String[] args) {
 
