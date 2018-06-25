@@ -52,7 +52,7 @@ public class MazeMain {
 			for (int i = 0; i < enters.length; i++) {
 				number.add(enters[i]);
 			}
-			maze2.Maze m = new maze2.Maze(row, col, trapCount, trapLocation, number);
+			Controller m = new Controller(row, col, trapCount, trapLocation, number);
 			m.judgement();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
