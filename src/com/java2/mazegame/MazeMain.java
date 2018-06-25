@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
@@ -20,6 +21,7 @@ import java.util.TreeSet;
 public class MazeMain {
 	public MazeMain(){
 		try {
+			
 //			地圖大小
 			FileReader fr = new FileReader("maze.txt");
 			BufferedReader br = new BufferedReader(fr);
@@ -33,8 +35,16 @@ public class MazeMain {
 			Maze m = new Maze(row, col, trapCount);
 			Random r = new Random();
 			Set<String> set = new TreeSet<>();
-			for(int i =0 ;i<=trapCount;i++){
-				
+			while (set.size() < trapCount) {
+				String trap = String.valueOf(r.nextInt(24));
+				set.add(trap);
+			}
+			Iterator it = set.iterator();
+			m.traps = new int[set.size()];
+			for (int a = 0; a < set.size(); a++) {
+				int i = Integer.parseInt(String.valueOf(it.next()));
+				m.traps[a] = i;
+				System.out.println(m.traps[a]);
 			}
 			
 		} catch (FileNotFoundException e) {
