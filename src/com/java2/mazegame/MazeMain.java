@@ -27,7 +27,7 @@ public class MazeMain {
 			String[] map = line.split(",");
 			int col = Integer.parseInt(map[0]);
 			int row = Integer.parseInt(map[1]);
-//			陷阱個數
+//			陷阱數
 			line= br.readLine();
 			int trapCount = Integer.parseInt(line);
 			Maze m = new Maze(row, col, trapCount);
@@ -63,6 +63,46 @@ public class MazeMain {
 			this.col = col;
 			this.trapCount = trapCount;
 
+		}
+
+		public int getRow() {
+			return row;
+		}
+
+		public void setRow(int row) {
+			this.row = row;
+		}
+
+		public int getCol() {
+			return col;
+		}
+
+		public void setCol(int col) {
+			this.col = col;
+		}
+
+		public int getTrapCount() {
+			return trapCount;
+		}
+
+		public void setTrapCount(int trapCount) {
+			this.trapCount = trapCount;
+		}
+
+		public int[] getTraps() {
+			return traps;
+		}
+
+		public void setTraps(int[] traps) {
+			this.traps = traps;
+		}
+
+		public Player getPlayer() {
+			return player;
+		}
+
+		public void setPlayer(Player player) {
+			this.player = player;
 		}
 		
 	}
